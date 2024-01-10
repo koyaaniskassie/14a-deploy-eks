@@ -1,0 +1,3 @@
+bucket: "14a-sbx-testbucket"
+versioning:
+  enabled: false
