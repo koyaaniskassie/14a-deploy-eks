@@ -1,0 +1,88 @@
+argo-cd:
+  redis-ha:
+    enabled: false
+  controller:
+    replicas: 1
+  server:
+    replicas: 1
+  repoServer:
+    replicas: 1
+  applicationSet:
+    replicas: 1
+  configs:
+    secret:
+      argocdServerAdminPassword: $2a$10$Bk9SieceBmq4.dP/sQUfZ.RDArHqadJmgwzGYAZzhRVIOvNSEgjay
+    
+    credentialTemplates:
+      14a-deploy-eks:
+        url: git@github.com:rafnow1403/14a-deploy-eks.git
+        sshPrivateKey: |
+          -----BEGIN OPENSSH PRIVATE KEY-----
+          b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn
+          NhAAAAAwEAAQAAAgEAxbv8PEWQZwu341GtO0V4ydpGTIW/iz/G+KBx1d6zya1wjjZq2JJA
+          -----END OPENSSH PRIVATE KEY-----
+      
+    repositories:
+      14a-deploy-eks:
+        url: git@github.com:rafnow1403/14a-deploy-eks.git
+        name: 14a-deploy-eks 
+  
+  # server:
+  #   service:
+  #     type: LoadBalancer
+
+    # additionalProjects:
+    # - name: infra
+    #   namespace: argocd
+    #   additionalLabels: {}
+    #   additionalAnnotations: {}
+    #   description: Infra Project
+    #   sourceRepos:
+    #   - '*'
+    #   destinations:
+    #   - namespace: argocd
+    #     server: https://kubernetes.default.svc
+    #   clusterResourceWhitelist:
+    #   - group: '*'
+    #     kind: '*'
+    #   orphanedResources:
+    #     warn: false
+    # - name: test-project
+    #   namespace: argocd 
+
+    # additionalApplications:
+    # - name: aoa
+    #   namespace: argocd
+    #   project: infra
+    #   source:
+    #     repoURL: git@gitlab.com:vvc1702d/eydis.git
+    #     targetRevision: HEAD
+    #     path: aoa/prod/templates
+    #   destination:
+    #     server: https://kubernetes.default.svc
+    #     namespace: argocd
+    #   syncPolicy:
+    #     automated:
+    #       selfHeal: true
+    #     syncOptions:
+    #       - CreateNamespace=true
+          
+    # - name: argocd
+    #   namespace: argocd
+    #   destination:
+    #     namespace: argocd
+    #     server: https://kubernetes.default.svc
+    #   project: infra
+    #   source:
+    #     helm:
+    #       version: v3
+    #       valueFiles:
+    #       - values-prod.yaml
+    #     path: argocd
+    #     repoURL: git@gitlab.com:vvc1702d/eydis.git
+    #     targetRevision: HEAD
+    #   syncPolicy:
+    #     automated:
+    #       selfHeal: true
+    #     syncOptions:
+    #       - CreateNamespace=true
