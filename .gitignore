@@ -1,0 +1,5 @@
+# ArgoCD
+**/*rsa
+**/*rsa.pub
+**/charts/*.tgz
+**/Chart.lock
