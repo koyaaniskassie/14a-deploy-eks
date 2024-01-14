@@ -21,6 +21,26 @@ argocd-apps:
         syncOptions:
           - CreateNamespace=true
 
+    - name: argocd-apps
+      namespace: argocd
+      project: argocd
+      source:
+        repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
+        tragetRevision: HEAD
+        path: k8s/argocd-apps
+        helm:
+          version: v3
+          valueFiles:
+            - values.yaml
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd-apps
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+
   projects:
     - name: argocd
       namespace: argocd
@@ -30,9 +50,9 @@ argocd-apps:
           server: https://kubernetes.default.svc
       sourceRepos:
       - '*'
-      # clusterResourceWhitelist:
-      # - group: '*'
-      #   kind: '*'
+      clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
       # orphanedResources:
       #   warn: false
     # - name: infra
