@@ -6,7 +6,7 @@ argocd-apps:
       project: argocd
       source:
         repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
-        tragetRevision: HEAD
+        targetRevision: HEAD
         path: k8s/argocd
         helm:
           version: v3
@@ -26,7 +26,7 @@ argocd-apps:
       project: argocd
       source:
         repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
-        tragetRevision: HEAD
+        targetRevision: HEAD
         path: k8s/argocd-apps
         helm:
           version: v3
