@@ -1,2 +1,3 @@
-global:
-  imageRegistry: ""
+nginx:
+  global:
+    imageRegistry: ""
