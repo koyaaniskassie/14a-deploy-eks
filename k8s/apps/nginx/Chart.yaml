@@ -5,6 +5,6 @@ version: 1.0.0
 appVersion: 1.25.3
 type: application
 dependencies:
-  - name: bitnami/nginx
+  - name: nginx
     version: 15.7.0
     repository: https://charts.bitnami.com/bitnami
