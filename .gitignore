@@ -3,3 +3,4 @@
 **/*rsa.pub
 **/charts/*.tgz
 **/Chart.lock
+k8s/argocd/values-secrets.yaml
