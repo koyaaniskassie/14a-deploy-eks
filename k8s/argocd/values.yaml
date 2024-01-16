@@ -73,7 +73,7 @@ argocd-apps:
       namespace: argocd
       description: Development project
       destinations:
-        - namespace: *
+        - namespace: '*'
           server: https://kubernetes.default.svc
       sourceRepos:
       - '*'

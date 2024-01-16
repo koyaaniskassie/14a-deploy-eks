@@ -9,9 +9,9 @@ spec:
   destination:
     namespace: nginx
     server: https://kubernetes.default.svc
-  project: default
+  project: development
   source:
-    path: apps/nginx
+    path: k8s/apps/nginx
     repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
     targetRevision: HEAD
     helm:
