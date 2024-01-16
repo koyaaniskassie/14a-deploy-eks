@@ -18,3 +18,6 @@ spec:
       releaseName: nginx
       valueFiles: 
         - values.yaml
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
