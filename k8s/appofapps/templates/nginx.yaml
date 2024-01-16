@@ -7,12 +7,12 @@ metadata:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: argocd
+    namespace: nginx
     server: https://kubernetes.default.svc
-  project: default
+  project: development
   source:
-    path: apps/prod/nginx
-    repoURL: git@gitlab.com:vvc1702d/eydis.git
+    path: k8s/apps/nginx
+    repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
     targetRevision: HEAD
     helm:
       releaseName: nginx
