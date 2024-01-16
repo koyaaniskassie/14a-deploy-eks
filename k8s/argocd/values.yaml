@@ -68,3 +68,15 @@ argocd-apps:
       clusterResourceWhitelist:
       - group: '*'
         kind: '*'
+
+    - name: development
+      namespace: argocd
+      description: Development project
+      destinations:
+        - namespace: *
+          server: https://kubernetes.default.svc
+      sourceRepos:
+      - '*'
+      clusterResourceWhitelist:
+      - group: '*'
+        kind: '*'
