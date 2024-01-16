@@ -12,30 +12,13 @@ argo-cd:
   configs:
     secret:
       argocdServerAdminPassword: $2a$10$Bk9SieceBmq4.dP/sQUfZ.RDArHqadJmgwzGYAZzhRVIOvNSEgjay
-    
-    # credentialTemplates:
-    #   14a-deploy-eks:
-    #     url: git@github.com:rafnow1403/14a-deploy-eks.git
-    #     sshPrivateKey: |
-    #       -----BEGIN OPENSSH PRIVATE KEY-----
-    #       b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAACFwAAAAdzc2gtcn
-    #       NhAAAAAwEAAQAAAgEAxbv8PEWQZwu341GtO0V4ydpGTIW/iz/G+KBx1d6zya1wjjZq2JJA
-    #       EVXiTs5NlzaSzIn+JhGwfDd4DRL79xupr0tkjsOeiOZ9jEHWY8su4NmMsD/mm2tY+jc3j+
-    #       NoRkT9VQBXMAAAAbcmFmYWxub3dpY2tpQHJhZmFzLWFpci5ob21l
-    #       -----END OPENSSH PRIVATE KEY-----
-      
-    # repositories:
-    #   14a-deploy-eks:
-    #     url: git@github.com:rafnow1403/14a-deploy-eks.git
-    #     name: 14a-deploy-eks 
-  
+
   # server:
   #   service:
   #     type: LoadBalancer
 
 
 argocd-apps:
-
   applications:
     - name: argocd
       namespace: argocd
