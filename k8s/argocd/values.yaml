@@ -40,6 +40,22 @@ argocd-apps:
         syncOptions:
           - CreateNamespace=true
 
+    - name: app_of_apps
+      namespace: argocd
+      project: argocd
+      source:
+        repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
+        targetRevision: HEAD
+        path: k8s/app_of_apps/templates
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
+      syncPolicy:
+        automated:
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true
+
   projects:
     - name: argocd
       namespace: argocd
