@@ -5,5 +5,4 @@ crossplane:
 
   image:
     repository: xpkg.upbound.io/crossplane/crossplane
-    tag: alpha
     pullPolicy: Always
