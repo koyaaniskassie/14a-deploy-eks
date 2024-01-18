@@ -1,0 +1,10 @@
+apiVersion: v2 
+name: crossplane
+description: A Helm chart for crossplane
+version: 1.0.0 #Internal chart version, If you changed something you can bump the version , but it ain't neccessary
+appVersion: 1.0.0 # applicaiton itself version
+type: application
+dependencies:
+  - name: crossplane
+    version: 1.15.0-rc.0.9.ged19cd5d #Chart version
+    repository: https://charts.crossplane.io/master/

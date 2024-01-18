@@ -41,5 +41,8 @@ cd k8s/argocd
 kubectl apply -k https://github.com/argoproj/argo-cd/manifests/crds\?ref\=stable # install CRDs
 helm repo add argo-helm https://argoproj.github.io/argo-helm # add argocd repository
 helm dependency build # only first time when Chart.lock in k8s/argocd doesn't exist. This will create directory charts and download charts stated in Chart.yaml
-helm install argocd . -f values.yaml --namespace argocd --create-namespace
+helm install argocd . -f values.yaml -f values-secrets.yaml --namespace argocd --create-namespace
+cd ../argocd-apps
+helm dependency build
+helm install argocd-apps . -f values.yaml --namespace argocd --create-namespace
 ```
