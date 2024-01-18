@@ -1,0 +1,10 @@
+apiVersion: v2 
+name: aws-load-balancer-controller
+description: A Helm chart for aws-load-balancer-controller
+version: 1.0.0 #Internal chart version, If you changed something you can bump the version , but it ain't neccessary
+appVersion: 2.6.2 # applicaiton itself version
+type: application
+dependencies:
+  - name: nginx
+    version: 1.6.2 #Chart version
+    repository: https://aws.github.io/eks-charts
