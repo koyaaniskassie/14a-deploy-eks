@@ -13,7 +13,7 @@ spec:
   source:
     path: k8s/apps/aws-load-balancer-controller
     repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
-    targetRevision: 006-eks-addons
+    targetRevision: 007-crossplane-aws-infrastrucutre
     helm:
       releaseName: aws-load-balancer-controller
       valueFiles: 
