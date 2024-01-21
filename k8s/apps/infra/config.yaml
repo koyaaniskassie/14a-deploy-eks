@@ -33,7 +33,7 @@ metadata:
   annotations:    
     eks.amazonaws.com/role-arn: arn:aws:iam::060595330994:role/crossplane
 spec: {}
-
+---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
@@ -42,7 +42,7 @@ spec:
   package: xpkg.upbound.io/upbound/provider-aws-s3:v0.37.0
   controllerConfigRef:
     name: irsa-controllerconfig
-
+---
 apiVersion: aws.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
@@ -50,7 +50,7 @@ metadata:
 spec:
   credentials:
     source: IRSA
-
+---
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
