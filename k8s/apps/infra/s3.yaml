@@ -14,10 +14,28 @@
 #     name: crossplane-provider-config
 
 
+# apiVersion: s3.aws.crossplane.io/v1beta1
+# kind: Bucket
+# metadata:
+#   name: crossplane-test-ylaaaaaaaaaa
+#   namespace: crossplane-system
+# spec:
+#   forProvider:
+#     acl: private
+#     locationConstraint: eu-central-1
+#     versioningConfiguration:
+#       status: Enabled
+#   providerConfigRef:
+#     name: crossplane-provider-config
+#   providerRef:
+#     name: crossplane-provider-config
+
+
+
 apiVersion: s3.aws.crossplane.io/v1beta1
 kind: Bucket
 metadata:
-  name: crossplane-test-ylaaaaaaaaaa
+  name: crossplane-test-ylaaaaaaaaa
   namespace: crossplane-system
 spec:
   forProvider:
