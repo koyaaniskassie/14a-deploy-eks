@@ -14,8 +14,8 @@ metadata:
   name: provider-aws
 spec:
   package: crossplane/provider-aws:v0.47.1
-  controllerConfigRef:
-    name: aws-config
+  # controllerConfigRef:
+  #   name: aws-config
 # ---
 # apiVersion: aws.crossplane.io/v1beta1
 # kind: ProviderConfig
