@@ -45,7 +45,7 @@ kind: Provider
 metadata:
   name: provider-aws-s3
 spec:
-  package: xpkg.upbound.io/upbound/provider-aws-s3:v0.37.0
+  package: xpkg.upbound.io/upbound/provider-aws-s3:v0.47.1
   controllerConfigRef:
     name: irsa-controllerconfig
 ---
