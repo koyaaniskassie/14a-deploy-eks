@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: infra
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: infra
+    server: https://kubernetes.default.svc
+  project: development
+  source:
+    path: k8s/apps/infra
+    repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
+    targetRevision: 007-crossplane-aws-infrastrucutre
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+      automated: {}

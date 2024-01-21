@@ -1,1 +1,8 @@
 crossplane:
+  replicas: 1
+
+  deploymentStrategy: RollingUpdate
+
+  image:
+    repository: xpkg.upbound.io/crossplane/crossplane
+    pullPolicy: Always
