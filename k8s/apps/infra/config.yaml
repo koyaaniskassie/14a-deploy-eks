@@ -60,9 +60,9 @@ spec:
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  name: my-s3-bucket
+  name: my-s3-bucket-aaaaaaaaaaaaqweqeqweqweqwewqe
 spec:
   forProvider:
-    region: us-east-2
+    region: eu-central-1
   providerConfigRef:
     name: irsa-providerconfig
