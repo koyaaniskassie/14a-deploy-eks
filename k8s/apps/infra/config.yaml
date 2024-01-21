@@ -56,13 +56,13 @@ metadata:
 spec:
   credentials:
     source: IRSA
-# ---
-# apiVersion: s3.aws.upbound.io/v1beta1
-# kind: Bucket
-# metadata:
-#   name: my-s3-bucket
-# spec:
-#   forProvider:
-#     region: us-east-2
-#   providerConfigRef:
-#     name: irsa-providerconfig
+---
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: my-s3-bucket
+spec:
+  forProvider:
+    region: us-east-2
+  providerConfigRef:
+    name: irsa-providerconfig
