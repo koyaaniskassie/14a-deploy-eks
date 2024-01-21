@@ -10,3 +10,5 @@ spec:
     region: eu-central-1
     tags:
       Name: SampleBucket
+  providerConfigRef:
+    name: aws-config
