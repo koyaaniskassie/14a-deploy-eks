@@ -1,14 +1,31 @@
-apiVersion: s3.aws.upbound.io/v1beta1
+# apiVersion: s3.aws.upbound.io/v1beta1
+# kind: Bucket
+# metadata:
+#   labels:
+#     testing.upbound.io/example-name: s3
+#   name: 14a-deploy-eks-test-bucket-s3
+# spec:
+#   forProvider:
+#     objectLockEnabled: true
+#     region: eu-central-1
+#     tags:
+#       Name: SampleBucket
+#   providerConfigRef:
+#     name: crossplane-provider-config
+
+
+apiVersion: s3.aws.crossplane.io/v1beta1
 kind: Bucket
 metadata:
-  labels:
-    testing.upbound.io/example-name: s3
-  name: 14a-deploy-eks-test-bucket-s3
+  name: crossplane-test-ylaaaaaaaaaa
+  namespace: crossplane-system
 spec:
   forProvider:
-    objectLockEnabled: true
-    region: eu-central-1
-    tags:
-      Name: SampleBucket
+    acl: private
+    locationConstraint: eu-central-1
+    versioningConfiguration:
+      status: Enabled
   providerConfigRef:
-    name: aws-config
+    name: crossplane-provider-config
+  providerRef:
+    name: crossplane-provider-config
