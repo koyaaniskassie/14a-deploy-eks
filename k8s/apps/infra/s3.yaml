@@ -4,16 +4,6 @@ metadata:
   generateName: crossplane-bucket-
 spec:
   forProvider:
-    region: eu-central-1
-  providerConfigRef:
-    name: aws-config
----
-apiVersion: s3.aws.upbound.io/v1beta1
-kind: Bucket
-metadata:
-  generateName: crossplane-bucket-
-spec:
-  forProvider:
     region: us-east-2
   providerConfigRef:
     name: default
