@@ -1,9 +1,12 @@
 apiVersion: s3.aws.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  generateName: crossplane-bucket-
+  labels:
+    testing.upbound.io/example-name: s3
+  name: ${Rand.RFC1123Subdomain}
 spec:
   forProvider:
-    region: us-east-2
-  providerConfigRef:
-    name: default
+    objectLockEnabled: true
+    region: eu-central-1
+    tags:
+      Name: SampleBucket
