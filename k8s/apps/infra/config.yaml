@@ -32,13 +32,13 @@
 
 
 
-# apiVersion: pkg.crossplane.io/v1alpha1
-# kind: ControllerConfig
-# metadata:
-#   name: irsa-controllerconfig
-#   annotations:    
-#     eks.amazonaws.com/role-arn: arn:aws:iam::060595330994:role/crossplane
-# spec: {}
+apiVersion: pkg.crossplane.io/v1alpha1
+kind: ControllerConfig
+metadata:
+  name: irsa-controllerconfig
+  annotations:    
+    eks.amazonaws.com/role-arn: arn:aws:iam::060595330994:role/crossplane
+spec: {}
 ---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
