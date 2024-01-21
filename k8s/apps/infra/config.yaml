@@ -1,26 +1,62 @@
+# apiVersion: pkg.crossplane.io/v1alpha1
+# kind: ControllerConfig
+# metadata:
+#   name: aws-config
+#   annotations:
+#     eks.amazonaws.com/role-arn: arn:aws:iam::060595330994:role/crossplane
+# spec:
+#   podSecurityContext:
+#     fsGroup: 2000
+# ---
+# apiVersion: pkg.crossplane.io/v1
+# kind: Provider
+# metadata:
+#   name: provider-aws-s3
+# spec:
+#   package: xpkg.upbound.io/upbound/provider-aws-s3:v0.47.1
+#   controllerConfigRef:
+#     name: aws-config
+# ---
+# apiVersion: aws.crossplane.io/v1beta1
+# kind: ProviderConfig
+# metadata:
+#   name: aws-provider
+# spec:
+#   credentials:
+#     source: 
+
+
 apiVersion: pkg.crossplane.io/v1alpha1
 kind: ControllerConfig
 metadata:
-  name: aws-config
-  annotations:
+  name: irsa-controllerconfig
+  annotations:    
     eks.amazonaws.com/role-arn: arn:aws:iam::060595330994:role/crossplane
-spec:
-  podSecurityContext:
-    fsGroup: 2000
----
+spec: {}
+
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
   name: provider-aws-s3
 spec:
-  package: xpkg.upbound.io/upbound/provider-aws-s3:v0.47.1
+  package: xpkg.upbound.io/upbound/provider-aws-s3:v0.37.0
   controllerConfigRef:
-    name: aws-config
----
+    name: irsa-controllerconfig
+
 apiVersion: aws.upbound.io/v1beta1
 kind: ProviderConfig
 metadata:
-  name: crossplane-provider-config
+  name: irsa-providerconfig
 spec:
   credentials:
-    source: InjectedIdentity
+    source: IRSA
+
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: my-s3-bucket
+spec:
+  forProvider:
+    region: us-east-2
+  providerConfigRef:
+    name: irsa-providerconfig
