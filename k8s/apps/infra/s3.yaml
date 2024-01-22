@@ -1,10 +1,10 @@
-apiVersion: s3.aws.upbound.io/v1beta1
-kind: Bucket
-metadata:
-  name: 14a-deploy-eks-bucket-test
+# apiVersion: s3.aws.upbound.io/v1beta1
+# kind: Bucket
+# metadata:
+#   name: 14a-deploy-eks-bucket-test
 
-spec:
-  forProvider:
-    region: eu-central-1
-  providerConfigRef:
-    name: irsa-providerconfig
+# spec:
+#   forProvider:
+#     region: eu-central-1
+#   providerConfigRef:
+#     name: irsa-providerconfig
