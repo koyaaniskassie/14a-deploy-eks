@@ -1,49 +1,10 @@
-# apiVersion: s3.aws.upbound.io/v1beta1
-# kind: Bucket
-# metadata:
-#   labels:
-#     testing.upbound.io/example-name: s3
-#   name: 14a-deploy-eks-test-bucket-s3
-# spec:
-#   forProvider:
-#     objectLockEnabled: true
-#     region: eu-central-1
-#     tags:
-#       Name: SampleBucket
-#   providerConfigRef:
-#     name: crossplane-provider-config
+apiVersion: s3.aws.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: 14a-deploy-eks-bucket-test
 
-
-# apiVersion: s3.aws.crossplane.io/v1beta1
-# kind: Bucket
-# metadata:
-#   name: crossplane-test-ylaaaaaaaaaa
-#   namespace: crossplane-system
-# spec:
-#   forProvider:
-#     acl: private
-#     locationConstraint: eu-central-1
-#     versioningConfiguration:
-#       status: Enabled
-#   providerConfigRef:
-#     name: crossplane-provider-config
-#   providerRef:
-#     name: crossplane-provider-config
-
-
-
-# apiVersion: s3.aws.crossplane.io/v1beta1
-# kind: Bucket
-# metadata:
-#   name: crossplane-test-ylaaaaaaaaa
-#   namespace: crossplane-system
-# spec:
-#   forProvider:
-#     acl: private
-#     locationConstraint: eu-central-1
-#     versioningConfiguration:
-#       status: Enabled
-#   providerConfigRef:
-#     name: crossplane-provider-config
-#   providerRef:
-#     name: crossplane-provider-config
+spec:
+  forProvider:
+    region: eu-central-1
+  providerConfigRef:
+    name: irsa-providerconfig
