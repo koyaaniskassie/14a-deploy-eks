@@ -1,3 +1,10 @@
+# TODO
+Currently configuring loadbalancer-ingress integration is bit clunky. There are two ways to approach issue with missing eprmissions according to docs:
+ - add permissions for creating loadbalancer to nodes
+ - give permissions to service account and attach that serviceaccount to the loadbalancer controller
+
+For now I'm using second option, but service account is created separately since the rest is done in helm. TODO is to figure out cleaner way to fix this withot allowing all nodes to access loadbalancer
+
 # Fast init
 ---
 Run shell script init.sh
