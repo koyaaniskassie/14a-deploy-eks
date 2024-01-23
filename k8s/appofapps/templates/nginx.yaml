@@ -13,7 +13,7 @@ spec:
   source:
     path: k8s/apps/nginx
     repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
-    targetRevision: HEAD
+    targetRevision: 007-crossplane-aws-infrastrucutre
     helm:
       releaseName: nginx
       valueFiles: 
