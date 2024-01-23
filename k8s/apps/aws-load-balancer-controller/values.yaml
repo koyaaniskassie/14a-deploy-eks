@@ -3,4 +3,4 @@ aws-load-balancer-controller:
   serviceAccount:
     create: true
     name: aws-load-balancer-controller
-    annotations: ssomerole-not-yet-implemented
+    annotations: arn:aws:iam::060595330994:role/lb_controller
