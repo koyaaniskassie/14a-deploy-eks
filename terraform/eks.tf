@@ -63,7 +63,6 @@ module "eks" {
 
   eks_managed_node_group_defaults = {
     ami_type = "AL2_x86_64"
-
   }
 
   eks_managed_node_groups = {
@@ -71,7 +70,7 @@ module "eks" {
       name = "node-group-1"
 
       instance_types = ["t3.small"]
-
+      # capacity_type  = "SPOT"
       min_size     = 1
       max_size     = 3
       desired_size = 2
@@ -81,6 +80,7 @@ module "eks" {
       name = "node-group-2"
 
       instance_types = ["t3.small"]
+      # capacity_type  = "SPOT"
 
       min_size     = 1
       max_size     = 2
