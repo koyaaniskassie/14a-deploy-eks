@@ -2,13 +2,13 @@ argo-cd:
   redis-ha:
     enabled: false
   controller:
-    replicas: 1
+    replicas: 2
   server:
-    replicas: 1
+    replicas: 2
   repoServer:
-    replicas: 1
+    replicas: 2
   applicationSet:
-    replicas: 1
+    replicas: 2
   configs:
     secret:
       argocdServerAdminPassword: $2a$10$Bk9SieceBmq4.dP/sQUfZ.RDArHqadJmgwzGYAZzhRVIOvNSEgjay
