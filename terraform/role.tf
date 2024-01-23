@@ -47,7 +47,7 @@ resource "aws_iam_policy" "lb_controller_policy" {
 }
 
 resource "aws_iam_role" "lb_controller" {
-  name = "lb_controller"
+  name = "AWSLoadBalancerControllerIAMPolicy"
 
   # Terraform's "jsonencode" function converts a
   # Terraform expression result to valid JSON syntax.
