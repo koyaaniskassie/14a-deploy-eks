@@ -1,6 +1,6 @@
 aws-load-balancer-controller:
   clusterName: education-eks
-  serviceAccount:
-    create: true
-    annotations: 
-      - "arn:aws:iam::060595330994:role/lb_controller"
+  # serviceAccount:
+  #   create: true
+  #   annotations: 
+  #     - "arn:aws:iam::060595330994:role/lb_controller"
