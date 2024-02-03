@@ -8,3 +8,7 @@ spec:
     image: busybox:stable
     command: ["/bin/sh"]
     args: ["-c", "while true; do echo hello; sleep 5;done"]
+    securityContext:
+      capabilities:
+        add:
+          - "SYS_TIME"
