@@ -1,6 +1,5 @@
 aws-load-balancer-controller:
   clusterName: education-eks
   serviceAccount:
-    create: true
+    create: false
     name: aws-load-balancer-controller
-    annotations: ssomerole-not-yet-implemented

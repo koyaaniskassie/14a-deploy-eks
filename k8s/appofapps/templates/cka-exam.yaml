@@ -1,23 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx
+  name: cka-exam
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: nginx
+    namespace: cka-exam
     server: https://kubernetes.default.svc
   project: development
   source:
-    path: k8s/apps/nginx
+    path: k8s/apps/cka-exam
     repoURL: git@github.com:rafnow1403/14a-deploy-eks.git
     targetRevision: 007-crossplane-aws-infrastrucutre
-    helm:
-      releaseName: nginx
-      valueFiles: 
-        - values.yaml
   syncPolicy:
+    automated: {}
     syncOptions:
       - CreateNamespace=true
