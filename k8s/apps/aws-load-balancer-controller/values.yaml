@@ -3,5 +3,5 @@ aws-load-balancer-controller:
   serviceAccount:
     create: false
     name: aws-load-balancer-controller
-  #   annotations: 
+  #   annotations:
   #     - "arn:aws:iam::060595330994:role/lb_controller"
