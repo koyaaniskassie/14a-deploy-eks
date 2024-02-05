@@ -45,8 +45,6 @@ argo-cd:
       name: 14a-deploy-eks 
 ```
 
-
-While installing Argo (not sure why yet) first ArgoCD must be initialised THEN you can deploy argocd-apps. Base argo definition probably adds CRDs that argocd-apps will use to deploy.
 ```
 cd k8s/argocd
 helm repo add argo-helm https://argoproj.github.io/argo-helm # add argocd repository
