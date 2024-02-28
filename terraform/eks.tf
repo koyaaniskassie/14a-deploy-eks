@@ -8,14 +8,14 @@ data "aws_availability_zones" "available" {
 }
 
 locals {
-  cluster_name = "education-eks"
+  cluster_name = "obenseur"
 }
 
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.0.0"
 
-  name = "education-vpc"
+  name = "obenseur"
 
   cidr = "10.0.0.0/16"
   azs  = slice(data.aws_availability_zones.available.names, 0, 3)
@@ -66,8 +66,8 @@ module "eks" {
   }
 
   eks_managed_node_groups = {
-    one = {
-      name = "node-group-1"
+    general-purpose = {
+      name = "general-purpose"
 
       instance_types = ["t3.small"]
       # capacity_type  = "SPOT"
@@ -76,8 +76,8 @@ module "eks" {
       desired_size = 2
     }
 
-    two = {
-      name = "node-group-2"
+    storage = {
+      name = "storage"
 
       instance_types = ["t3.small"]
       # capacity_type  = "SPOT"
